@@ -20,7 +20,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 (() => {
     const konamiSequence = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
-    const nextKonamiPos = 0;
+    let nextKonamiPos = 0;
 
     document.addEventListener('keyup', function(e) {
         if (e.key == konamiSequence[nextKonamiPos]) {
