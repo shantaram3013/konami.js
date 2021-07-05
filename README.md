@@ -9,6 +9,8 @@ Include it in your project with:
     <script src='konami.js'>
 ```
 
+(Consider renaming it to something less conspicuous.)
+
 In JavaScript, simply listen for the `konami` event:
 ```js
 window.addEventListener('konami', function() {

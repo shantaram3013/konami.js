@@ -25,7 +25,6 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     document.addEventListener('keyup', function(e) {
         if (e.key == konamiSequence[nextKonamiPos]) {
             nextKonamiPos += 1;
-            console.log(nextKonamiPos);
             if (nextKonamiPos == konamiSequence.length) {
                 nextKonamiPos = 0;
                 const event = new Event('konami');
