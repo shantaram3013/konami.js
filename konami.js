@@ -18,23 +18,21 @@ OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
-function init() {
-    window.konamiSequence = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
-    window.nextKonamiPos = 0;
+(() => {
+    const konamiSequence = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+    const nextKonamiPos = 0;
 
-    document.addEventListener('keydown', function(e) {
-        if (window.konamiSequence.includes(e.key) && e.key == window.konamiSequence[window.nextKonamiPos]) {
-            window.nextKonamiPos += 1;
-            console.log(window.nextKonamiPos);
-            if (window.nextKonamiPos == window.konamiSequence.length) {
-                window.nextKonamiPos = 0;
+    document.addEventListener('keyup', function(e) {
+        if (e.key == konamiSequence[nextKonamiPos]) {
+            nextKonamiPos += 1;
+            console.log(nextKonamiPos);
+            if (nextKonamiPos == konamiSequence.length) {
+                nextKonamiPos = 0;
                 const event = new Event('konami');
-                window.dispatchEvent(event);
+                dispatchEvent(event);
             }
         } else {
-            window.nextKonamiPos = 0;
+            nextKonamiPos = 0;
         }
     });
-}
-
-window.onload = init;
+})();
